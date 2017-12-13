@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>SMTP Practice</h1>
+    @using (Html.BeginForm("SendText", "Home", FormMethod.Post))
+    {
+        <label>Body:</label>
+        @Html.TextArea("TextBody", null, new { @class = "form-control"})
+        <label>To:</label>
+        @Html.DropDownList("To", (List<SelectListItem>)ViewBag.dropdown)
+        <input type="submit" value="Send Text"/>
+    }
+</div>
